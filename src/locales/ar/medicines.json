@@ -1,0 +1,8 @@
+{
+  "medicines": "الأدوية",
+  "addMedicine": "إضافة دواء",
+  "medicineName": "اسم الدواء",
+  "price": "السعر",
+  "quantity": "الكمية",
+  "confirmDelete": "هل أنت متأكد من حذف هذا الدواء؟"
+}

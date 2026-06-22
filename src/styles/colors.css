@@ -1,0 +1,183 @@
+
+:root {
+  /* ========== الألوان الأساسية ========== */
+  --color-navy: #17284A;      /* كحلي داكن */
+  --color-blue: #162FBB;       /* أزرق متوسط */
+  --color-teal: #E7AE18;       /* تركواز فاتح */
+  --color-teal-dark: #D0D6E5;  /* تركواز غامق */
+
+  /* ========== الألوان الثانوية ========== */
+  --color-gray-blue: #72808E;   /* رمادي أزرق */
+  --color-gray: #A2ADB4;        /* رمادي فاتح */
+  --color-gray-light: #CBD3D5;  /* رمادي فاتح جداً */
+  --color-bg: #F0F0F0;          /* خلفية بيضاء مائلة للرمادي */
+
+  /* ========== تدرجات الألوان ========== */
+  --gradient-primary: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%);
+  --gradient-teal: linear-gradient(135deg, var(--color-teal-dark) 0%, var(--color-teal) 100%);
+  --gradient-hero: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 50%, var(--color-teal-dark) 100%);
+
+  /* ========== الألوان الوظيفية ========== */
+  --color-success: #10b981;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+  --color-info: var(--color-teal);
+
+  /* ========== ألوان النصوص ========== */
+  --text-primary: var(--color-navy);
+  --text-secondary: var(--color-blue);
+  --text-muted: var(--color-gray-blue);
+  --text-light: #FFFFFF;
+
+  /* ========== ألوان الخلفيات ========== */
+  --bg-primary: var(--color-bg);
+  --bg-card: #FFFFFF;
+  --bg-sidebar: var(--color-navy);
+  --bg-header: #FFFFFF;
+
+  /* ========== ألوان الحدود ========== */
+  --border-color: var(--color-gray-light);
+  --border-focus: var(--color-teal);
+
+  /* ========== ألوان الروابط والأزرار ========== */
+  --link-color: var(--color-teal);
+  --link-hover: var(--color-teal-dark);
+  --button-primary: var(--gradient-teal);
+  --button-secondary: var(--gradient-primary);
+}
+
+/* ========== الوضع الليلي (Dark Mode) ========== */
+[data-theme="dark"] {
+  --color-navy: #1a2a4a;
+  --color-blue: #2a3d5f;
+  --color-teal: #14c4d0;
+  --color-teal-dark: #10a0a8;
+  --color-bg: #0f172a;
+  --bg-card: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+}
+
+
+/* ========== تدرجات النصوص ========== */
+
+/* تدرج كحلي - أزرق */
+.text-gradient-navy-blue {
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* تدرج تركواز */
+.text-gradient-teal {
+  background: linear-gradient(135deg, var(--color-teal-dark) 0%, var(--color-teal) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* تدرج كحلي - تركواز */
+.text-gradient-navy-teal {
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-teal) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* تدرج ثلاثي الألوان */
+.text-gradient-multi {
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 50%, var(--color-teal) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* تدرج أزرق - تركواز */
+.text-gradient-blue-teal {
+  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-teal) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ========== تدرجات الخلفيات ========== */
+
+/* خلفية متدرجة كحلي - أزرق */
+.bg-gradient-navy-blue {
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%);
+}
+
+/* خلفية متدرجة تركواز */
+.bg-gradient-teal {
+  background: linear-gradient(135deg, var(--color-teal-dark) 0%, var(--color-teal) 100%);
+}
+
+/* خلفية متدرجة كحلي - تركواز */
+.bg-gradient-navy-teal {
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-teal) 100%);
+}
+
+/* خلفية متدرجة ثلاثية */
+.bg-gradient-multi {
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 50%, var(--color-teal) 100%);
+}
+
+/* خلفية متدرجة أزرق - تركواز */
+.bg-gradient-blue-teal {
+  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-teal) 100%);
+}
+
+/* ========== تدرجات الحدود ========== */
+.border-gradient-navy-blue {
+  border-image: linear-gradient(135deg, var(--color-navy), var(--color-blue));
+  border-image-slice: 1;
+}
+
+.border-gradient-teal {
+  border-image: linear-gradient(135deg, var(--color-teal-dark), var(--color-teal));
+  border-image-slice: 1;
+}
+
+/* ========== تدرجات الظلال ========== */
+.shadow-gradient-teal {
+  box-shadow: 0 10px 25px rgba(24, 178, 188, 0.2);
+}
+
+.shadow-gradient-navy {
+  box-shadow: 0 10px 25px rgba(23, 40, 74, 0.2);
+}
+
+/* دوائر المستخدم - تدرج تركواز */
+.avatar-teal {
+  background: linear-gradient(135deg, var(--color-teal-dark) 0%, var(--color-teal) 100%);
+  color: white;
+}
+
+/* دوائر المستخدم - تدرج كحلي */
+.avatar-navy {
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%);
+  color: white;
+}
+
+/* دوائر المستخدم - لون واحد */
+.avatar-solid-teal {
+  background: var(--color-teal);
+  color: white;
+}
+
+/* دوائر المستخدم - تدرج ثلاثي */
+.avatar-gradient-multi {
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 50%, var(--color-teal) 100%);
+  color: white;
+}
+
+/* دوائر المستخدم - مع تأثير hover */
+.avatar-hover-effect {
+  transition: all 0.3s;
+}
+
+.avatar-hover-effect:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(24, 178, 188, 0.3);
+}
