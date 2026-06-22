@@ -34,10 +34,14 @@ cp .env.example .env
 Update:
 
 ```env
-VITE_API_URL=https://api.www.mustafahasbsido.com/api
-VITE_STORAGE_URL=https://api.www.mustafahasbsido.com/storage
+VITE_API_URL=https://api.mustafahasbsido.com/api
+VITE_STORAGE_URL=https://api.mustafahasbsido.com/storage
 ```
 
+Pre-built production package:
+mustafa-frontend-build.zip
+
+This package contains the generated dist/ folder and can be deployed directly without running npm install or npm run build.
 ---
 
 ## Development Mode
