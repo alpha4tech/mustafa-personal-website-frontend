@@ -1,69 +1,240 @@
-# author-and-book-frontend
+# Mustafa Frontend (Vue 3 + Vite)
 
-This template should help get you started developing with Vue 3 in Vite.
+Frontend Website and Administration Interface for the Mustafa Hasb Sido Portfolio & Digital Marketing Platform.
 
-## Recommended IDE Setup
+Built with Vue 3, Vite, Composition API, Bootstrap Icons, and a custom bilingual system (Arabic / English).
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+---
 
-## Recommended Browser Setup
+## Requirements
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+* Node.js 18+
+* npm
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Installation
 
-## Project Setup
+Install dependencies:
 
-```sh
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+---
 
-```sh
+## Environment Configuration
+
+Create a local environment file:
+
+```bash
+cp .env.example .env
+```
+
+Update:
+
+```env
+VITE_API_URL=https://api.www.mustafahasbsido.com/api
+VITE_STORAGE_URL=https://api.www.mustafahasbsido.com/storage
+```
+
+---
+
+## Development Mode
+
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
+---
 
-```sh
+## Production Build
+
+```bash
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+The production build will be generated inside:
 
-```sh
-npm run test:unit
+```text
+dist/
 ```
 
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
+---
 
-```sh
-# Install browsers for the first run
-npx playwright install
+## Deployment
 
-# When testing on CI, must build the project first
-npm run build
+Upload the generated:
 
-# Runs the end-to-end tests
-npm run test:e2e
-# Runs the tests only on Chromium
-npm run test:e2e -- --project=chromium
-# Runs the tests of a specific file
-npm run test:e2e -- tests/example.spec.ts
-# Runs the tests in debug mode
-npm run test:e2e -- --debug
+```text
+dist/
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+directory to the hosting environment.
 
-```sh
-npm run lint
+---
+
+## Vue Router Configuration
+
+This project uses:
+
+```js
+createWebHistory()
 ```
+
+Therefore all requests must be redirected to:
+
+```text
+index.html
+```
+
+### Apache (.htaccess)
+
+```apache
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+</IfModule>
+```
+
+### Nginx
+
+```nginx
+location / {
+    try_files $uri $uri/ /index.html;
+}
+```
+
+---
+
+## Architecture Notes
+
+### API Clients
+
+Public components must use:
+
+```js
+publicAxios
+```
+
+Authenticated admin pages must use:
+
+```js
+axios
+```
+
+with token interception enabled.
+
+---
+
+### Localization
+
+The application does not use vue-i18n.
+
+A custom localization system based on:
+
+```js
+provide()
+inject()
+```
+
+and reactive locale management is implemented.
+
+Supported Languages:
+
+* Arabic (RTL)
+* English (LTR)
+
+---
+
+### UI Libraries
+
+* Vue 3
+* Vite
+* Bootstrap Icons
+* Iconify
+* Tabler Icons
+* Chart.js
+
+---
+
+### Important Notes
+
+#### Teleport Components
+
+Styles for components rendered through:
+
+```vue
+<Teleport>
+```
+
+must be placed in global styles rather than scoped styles.
+
+---
+
+#### Transition Components
+
+Vue transitions must contain a single root child element.
+
+---
+
+#### Empty Decorative Elements
+
+Avoid empty HTML tags inside buttons. Use CSS pseudo-elements instead.
+
+---
+
+## Features
+
+### Public Website
+
+* Home Page
+* About Section
+* Services Section
+* Portfolio Showcase
+* Blog System
+* Contact Form
+* Multi-language Support
+* RTL/LTR Support
+
+### Admin Dashboard
+
+* Authentication
+* Blog Management
+* Portfolio Management
+* Services Management
+* Categories & Tags
+* Contact Messages
+* Activity Logs
+* Analytics Dashboard
+* Trash & Restore System
+
+---
+
+## Deployment Checklist
+
+* Dependencies installed
+* Environment variables configured
+* API URL configured correctly
+* No localhost URLs remaining
+* Production build completed
+* Router rewrites configured
+* Images loading from backend storage
+* Authentication functioning correctly
+* CORS configured properly
+
+---
+
+## Technology Stack
+
+* Vue 3
+* Vite
+* Composition API
+* Axios
+* Bootstrap Icons
+* Chart.js
+* Custom Localization System
